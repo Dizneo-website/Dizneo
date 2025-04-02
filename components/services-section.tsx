@@ -4,64 +4,64 @@ import { useState } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { ChevronRight, BarChart, Layout, Search, PenTool, TrendingUp, MessageSquare } from "lucide-react"
+import { ChevronRight, BarChart, Search, TrendingUp, Users, Globe, ClipboardCheck } from "lucide-react"
 import { motion } from "framer-motion"
 
-const services = [
-  {
-    icon: <BarChart className="h-10 w-10 text-orange-600" />,
-    title: "Digital Marketing",
-    description: "Comprehensive digital marketing strategies to grow your online presence and drive conversions.",
-    subServices: ["SEO Optimization", "PPC Advertising", "Social Media Marketing", "Content Creation"],
-  },
-  {
-    icon: <Layout className="h-10 w-10 text-orange-600" />,
-    title: "Software Landing Pages",
-    description: "High-converting landing pages designed specifically for software products and services.",
-    subServices: ["SaaS Landing Pages", "Mobile App Pages", "Product Launch Pages", "Demo Request Pages"],
-  },
-  {
-    icon: <PenTool className="h-10 w-10 text-orange-600" />,
-    title: "Creative Design",
-    description: "Professional design services to enhance your brand identity and visual communication.",
-    subServices: ["Logo Design", "Banner Design", "Cover Designs", "Brand Identity"],
-  },
+const digitalMarketingServices = [
   {
     icon: <Search className="h-10 w-10 text-orange-600" />,
-    title: "SEO Optimization",
-    description: "Improve your search engine rankings and drive more organic traffic to your website.",
+    title: "SEO & Organic Growth",
+    description: "Boost your search rankings with proven SEO strategies that drive organic traffic.",
     subServices: ["Keyword Research", "On-Page SEO", "Technical SEO", "Link Building"],
   },
   {
     icon: <TrendingUp className="h-10 w-10 text-orange-600" />,
-    title: "PPC Advertising",
-    description: "Targeted pay-per-click campaigns that deliver measurable results and ROI.",
-    subServices: ["Google Ads", "Facebook Ads", "LinkedIn Ads", "Remarketing"],
+    title: "Paid Advertising (PPC)",
+    description: "Maximize ROI with high-converting PPC campaigns across search and social platforms.",
+    subServices: ["Google Ads", "Facebook Ads", "LinkedIn Ads", "Remarketing Campaigns"],
   },
   {
-    icon: <MessageSquare className="h-10 w-10 text-orange-600" />,
+    icon: <Users className="h-10 w-10 text-orange-600" />,
     title: "Social Media Marketing",
-    description: "Engage with your audience and build brand awareness through effective social media strategies.",
-    subServices: ["Content Strategy", "Community Management", "Paid Social", "Analytics & Reporting"],
+    description: "Engage and grow your audience with strategic social media campaigns.",
+    subServices: ["Content Strategy", "Influencer Marketing", "Community Management", "Analytics & Reporting"],
+  },
+  {
+    icon: <Globe className="h-10 w-10 text-orange-600" />,
+    title: "Content Marketing",
+    description: "Attract and convert customers with high-quality, SEO-optimized content.",
+    subServices: ["Blog Writing", "Video Marketing", "Infographics", "E-Books & Whitepapers"],
+  },
+  {
+    icon: <ClipboardCheck className="h-10 w-10 text-orange-600" />,
+    title: "Conversion Rate Optimization",
+    description: "Optimize your website and landing pages to turn visitors into customers.",
+    subServices: ["A/B Testing", "User Behavior Analysis", "Funnel Optimization", "Heatmap Tracking"],
+  },
+  {
+    icon: <BarChart className="h-10 w-10 text-orange-600" />,
+    title: "Analytics & Performance Tracking",
+    description: "Measure and improve your marketing performance with data-driven insights.",
+    subServices: ["Google Analytics", "Social Media Insights", "Competitor Analysis", "Custom Dashboards"],
   },
 ]
 
-export default function ServicesSection() {
+export default function DigitalMarketingSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
     <div className="container px-4 md:px-6">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="space-y-2">
-          <Badge className="bg-orange-100 text-orange-800 border-0">Our Services</Badge>
-          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">What We Offer</h2>
+          <Badge className="bg-orange-100 text-orange-800 border-0">Digital Marketing Services</Badge>
+          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Grow Your Business Online</h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-            We provide a wide range of digital marketing and design services to help your business thrive online.
+            Our expert digital marketing solutions help brands increase visibility, engagement, and revenue.
           </p>
         </div>
       </div>
       <div className="grid grid-cols-1 gap-6 mt-12 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, index) => (
+        {digitalMarketingServices.map((service, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
@@ -81,7 +81,7 @@ export default function ServicesSection() {
               <CardContent>
                 <CardDescription>{service.description}</CardDescription>
                 <div className="mt-4">
-                  <h4 className="text-sm font-medium mb-2">Services Include:</h4>
+                  <h4 className="text-sm font-medium mb-2">Includes:</h4>
                   <ul className="space-y-1">
                     {service.subServices.map((subService, i) => (
                       <li key={i} className="text-sm text-muted-foreground flex items-center">
@@ -104,4 +104,3 @@ export default function ServicesSection() {
     </div>
   )
 }
-

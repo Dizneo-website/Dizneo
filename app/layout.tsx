@@ -1,19 +1,15 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import "./globals.css";
 
-export const metadata: Metadata = {
-  title: 'Dizneo',
-  description: 'Created by Sagar',
-}
+export const metadata = {
+  title: "Dizneo Digital Marketing",
+  description: "The best digital marketing agency",
+  Creator: 'Created by Sagar',
+};
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="font-bricolage">{children}</body>
     </html>
-  )
+  );
 }
