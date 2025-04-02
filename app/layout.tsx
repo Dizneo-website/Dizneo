@@ -1,4 +1,3 @@
-import Script from "next/script";
 import "./globals.css";
 
 export const metadata = {
@@ -10,6 +9,14 @@ export const metadata = {
     description: "Helping businesses grow with top digital marketing services.",
     url: "https://dizneo.com",
     site_name: "Dizneo",
+    images: [
+      {
+        url: "https://dizneo.com/your-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dizneo Digital Marketing",
+      },
+    ],
   },
 };
 
@@ -17,19 +24,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics Script */}
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=G-13H36PN2S4`}
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-13H36PN2S4');
-          `}
-        </Script>
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Dizneo Digital Marketing" />
+        <meta property="og:image" content="https://dizneo.com/your-image.jpg" />
+        <link rel="canonical" href="https://dizneo.com" />
       </head>
       <body className="font-bricolage">{children}</body>
     </html>
